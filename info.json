@@ -1,0 +1,8 @@
+{
+  "name": "BatteryLocomotive",
+  "version": "1.0.0",
+  "title": "Battery Locomotive",
+  "author": "KoharaKazuya",
+  "factorio_version": "0.18",
+  "dependencies": ["base"]
+}
