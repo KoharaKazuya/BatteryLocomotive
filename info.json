@@ -3,6 +3,6 @@
   "version": "1.0.1",
   "title": "Battery Locomotive",
   "author": "KoharaKazuya",
-  "factorio_version": "0.18",
+  "factorio_version": "1.0",
   "dependencies": ["base"]
 }
