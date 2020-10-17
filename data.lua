@@ -89,7 +89,7 @@ add_locomotive {
         {name = "advanced-circuit", amount = 10}
     },
     fuel_base = "rocket-fuel",
-    fuel_value = "1000MJ" -- Rocket fuel's fuel value (100MJ) * Rocket fuel's stack size (10) * Locomotive's fuel inventory size (3)
+    fuel_value = "3000MJ" -- Rocket fuel's fuel value (100MJ) * Rocket fuel's stack size (10) * Locomotive's fuel inventory size (3)
 }
 add_locomotive {
     locomotive = key.locomotive_mk3,
