@@ -5,6 +5,11 @@ set -eu
 cd "$(dirname "$0")"
 cd "$(git rev-parse --show-toplevel)"
 
+if git status --short | grep . >/dev/null; then
+  echo "Uncommitted files found. Commit first."
+  exit 1
+fi
+
 version="$(cat info.json | jq -r .version)"
 output="BatteryLocomotive_${version}.zip"
 prefix="BatteryLocomotive_${version}/"
