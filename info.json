@@ -4,5 +4,5 @@
   "title": "Battery Locomotive",
   "author": "KoharaKazuya",
   "factorio_version": "1.0",
-  "dependencies": ["base"]
+  "dependencies": ["base", "(?) Krastorio2"]
 }

@@ -59,6 +59,7 @@ local function add_locomotive(attr)
     fuel.flags = {"hidden"}
     fuel.fuel_category = key.fuel_category
     fuel.fuel_value = attr.fuel_value
+    -- The fuel_value, fuel_acceleration_multiplier and fuel_top_speed_multiplier will be overwritten in data-final-fixes.lua.
 
     data:extend{entity, item, recipe, fuel}
 

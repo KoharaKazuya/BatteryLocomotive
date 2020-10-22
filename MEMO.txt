@@ -1,0 +1,13 @@
+調べたところ Krastrio 2 は Factorio 本来のアイテムに多くの変更を加えていた (燃料のエネルギーや燃焼効率、機関車の重さや加速度など)。頑張ればそれらと同じ性能にすることはできると思うけど、スマートなやり方を思いつかなかった。
+
+困ったことに Krastorio 2 の核燃料の加速度の性能はロケット燃料のそれと同じになるようだ。Krastorio 2 では核燃料を機関車の燃料として使えないため問題にはならないはずだが、私の Battery Locomotive では MK2 と MK3 の加速度の性能が同じになることは避けたい。
+
+他の MOD と調和できることは魅力的だけど、シンプルさと安定性を優先してこのまま、つまり他の MOD に関係なく固定値の方針としようと思う。
+
+---
+
+From what I found, Krastrio 2 made a lot of changes to the original Factorio items (fuel energy, fuel efficiency, locomotive weight and acceleration, etc.). I'm sure I could make it perform as well as those if I tried hard enough, but I couldn't think of a smart way to do it.
+
+The trouble is that the acceleration performance of Krastorio 2's nuclear fuel seems to be the same as that of rocket fuel. It shouldn't be a problem since Krastorio 2 can't use nuclear fuel as fuel for the locomotive, but I think that my Battery Locomotive should not have the same acceleration performance as MK2 and MK3.
+
+It's tempting to be able to harmonize with other mods, but for simplicity and stability, I'll keep it as is, i.e., a fixed value policy regardless of other mods.
