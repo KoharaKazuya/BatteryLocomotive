@@ -122,3 +122,21 @@ data:extend{
         }
     }
 }
+
+-- ### Tips and Tricks ###
+
+data:extend{
+    {
+        type = "tips-and-tricks-item",
+        name = key.tips_and_tricks,
+        order = "z",
+        simulation = {
+            init_file = "__BatteryLocomotive__/tips-and-tricks-init.lua"
+        },
+        tag = "[item=" .. key.locomotive .. "]",
+        category = "trains",
+        indent = 1,
+        trigger = {type = "research", technology = key.technology},
+        dependencies = {"trains"}
+    }
+}

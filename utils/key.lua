@@ -7,5 +7,6 @@ return {
     fuel_nuclear = "battery-locomotive-hidden-locomotive-fuel-nuclear",
     receiver = "battery-locomotive-hidden-receiver-over-stopped-locomotive",
     fuel_category = "battery-locomotive-fuel",
-    technology = "battery-locomotive"
+    technology = "battery-locomotive",
+    tips_and_tricks = "battery-locomotive"
 }

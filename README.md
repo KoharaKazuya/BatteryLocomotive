@@ -30,7 +30,7 @@ So, if you're looking for an end game that goes beyond vanilla, play with `Elect
 
 Adds three battery locomotives.
 
-When the train is stopped, it is charged as long as it is within range of a electric pole.
+Battery locomotives run on electric energy. When the train is stopped, it is charged as long as it is within range of a electric pole.
 
 Battery locomotives are unlocked by researching specialized technology.
 
