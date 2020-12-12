@@ -46,12 +46,16 @@ script.on_event(defines.events.on_train_changed_state, function(event)
 end)
 
 script.on_event({
-    defines.events.on_built_entity, defines.events.on_robot_built_entity
-}, function(event) create_receiver(event.created_entity) end)
+    defines.events.on_built_entity, defines.events.on_robot_built_entity,
+    defines.events.script_raised_built
+}, function(event)
+    local entity = event.created_entity or event.entity
+    create_receiver(entity)
+end)
 
 script.on_event({
     defines.events.on_entity_died, defines.events.on_player_mined_entity,
-    defines.events.on_robot_mined_entity
+    defines.events.on_robot_mined_entity, defines.events.script_raised_destroy
 }, function(event)
     local entity = event.entity
     if not train.is_battery_locomotive(entity) then return end
