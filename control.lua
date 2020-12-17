@@ -1,3 +1,5 @@
+require "remote-interface"
+
 local key = require "utils.key"
 local train = require "utils.train"
 local receiver = require "utils.receiver"
@@ -5,6 +7,21 @@ local receiver = require "utils.receiver"
 script.on_init(function()
     global = {}
     global.entities = {}
+    global.locomotive_type_names = {
+        key.locomotive, key.locomotive_mk2, key.locomotive_mk3
+    }
+    global.schema_version = 2
+end)
+
+script.on_configuration_changed(function(data)
+    -- migrate global table
+    local version = global.schema_version or 1
+    if version < 2 then
+        global.locomotive_type_names = {
+            key.locomotive, key.locomotive_mk2, key.locomotive_mk3
+        }
+    end
+    global.schema_version = 2
 end)
 
 local function create_receiver(locomotive)

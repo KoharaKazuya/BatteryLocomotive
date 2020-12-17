@@ -3,6 +3,8 @@ Version: 1.2.0
 Date: 2020.12.12
   Features:
     - More mods compatibility. Battery Locomotive has come to handle `script_raised_built` and `script_raised_destroy` events.
+  Modding:
+    - Added remote interface to add a new battery locomotive type.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2020.12.05
