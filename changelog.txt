@@ -2,7 +2,7 @@
 Version: 1.2.0
 Date: 2020.12.12
   Features:
-    - More mods compatibility. Battery Locomotive has come to handle `script_raised_built` and `script_raised_destroy` events.
+    - More mods compatibility. Battery Locomotive has come to handle `script_raised_built`, `script_raised_destroy` and `on_entity_cloned` events.
   Bugfixes:
     - Fixed a bug that caused a crash when an invalid BatteryLocomotive receiver entity was created for some reason.
   Modding:

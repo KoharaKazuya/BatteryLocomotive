@@ -68,9 +68,9 @@ end)
 
 script.on_event({
     defines.events.on_built_entity, defines.events.on_robot_built_entity,
-    defines.events.script_raised_built
+    defines.events.script_raised_built, defines.events.on_entity_cloned
 }, function(event)
-    local entity = event.created_entity or event.entity
+    local entity = event.created_entity or event.entity or event.destination
     create_receiver(entity)
 end)
 
