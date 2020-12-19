@@ -44,10 +44,7 @@ end
 
 local function is_battery_locomotive(entity)
     if not entity then return false end
-    local name = entity.name
-    for _, v in pairs(global.locomotive_type_names) do
-        if v == name then return true end
-    end
+    if global.locomotive_type_names[entity.name] then return true end
     return false
 end
 

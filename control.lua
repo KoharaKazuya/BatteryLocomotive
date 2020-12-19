@@ -8,7 +8,9 @@ script.on_init(function()
     global = {}
     global.entities = {}
     global.locomotive_type_names = {
-        key.locomotive, key.locomotive_mk2, key.locomotive_mk3
+        [key.locomotive] = true,
+        [key.locomotive_mk2] = true,
+        [key.locomotive_mk3] = true
     }
     global.schema_version = 2
 end)
@@ -18,7 +20,9 @@ script.on_configuration_changed(function(data)
     local version = global.schema_version or 1
     if version < 2 then
         global.locomotive_type_names = {
-            key.locomotive, key.locomotive_mk2, key.locomotive_mk3
+            [key.locomotive] = true,
+            [key.locomotive_mk2] = true,
+            [key.locomotive_mk3] = true
         }
     end
     global.schema_version = 2
