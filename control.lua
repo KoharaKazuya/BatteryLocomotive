@@ -93,7 +93,7 @@ script.on_nth_tick(180, function()
         local receivers = surface.find_entities_filtered {name = key.receiver}
         for _, r in pairs(receivers) do
             if not receiver.is_valid_receiver(global.entities, r) then
-                receiver.destroy()
+                r.destroy()
             end
         end
     end
