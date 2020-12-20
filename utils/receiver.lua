@@ -1,4 +1,10 @@
 local train = require "train"
+local key = require "key"
+
+local function is_receiver(entity)
+    if not entity then return false end
+    return entity.name == key.receiver
+end
 
 local function is_valid_receiver(global_pool, receiver)
     -- existence check
@@ -35,4 +41,8 @@ local function refuel(receiver, locomotive)
         locomotive.burner.remaining_burning_fuel + transfer_energy
 end
 
-return {is_valid_receiver = is_valid_receiver, refuel = refuel}
+return {
+    is_receiver = is_receiver,
+    is_valid_receiver = is_valid_receiver,
+    refuel = refuel
+}

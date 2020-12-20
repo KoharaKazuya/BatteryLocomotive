@@ -53,6 +53,12 @@ local function remove_all_invalid_receivers()
     end
 end
 
+local function remove_uncontrolled_receiver(entity)
+    if not receiver.is_receiver(entity) then return end
+    if receiver.is_valid_receiver(global.entities, entity) then return end
+    entity.destroy()
+end
+
 script.on_event(defines.events.on_train_changed_state, function(event)
     if event.train.speed == 0 then
         --- create hidden receiver over locomotive when the train stopped
@@ -72,6 +78,7 @@ script.on_event({
 }, function(event)
     local entity = event.created_entity or event.entity or event.destination
     create_receiver(entity)
+    remove_uncontrolled_receiver(entity)
 end)
 
 script.on_event({
@@ -86,19 +93,6 @@ script.on_event({
         if e and e.locomotive == entity then
             if e and e.receiver.valid then e.receiver.destroy() end
             global.entities[i] = nil
-        end
-    end
-end)
-
-script.on_nth_tick(180, function()
-    -- remove ghost receivers
-    remove_all_invalid_receivers()
-    for _, surface in pairs(game.surfaces) do
-        local receivers = surface.find_entities_filtered {name = key.receiver}
-        for _, r in pairs(receivers) do
-            if not receiver.is_valid_receiver(global.entities, r) then
-                r.destroy()
-            end
         end
     end
 end)
