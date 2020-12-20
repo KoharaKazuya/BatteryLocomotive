@@ -4,6 +4,8 @@ local key = require "utils.key"
 local train = require "utils.train"
 local receiver = require "utils.receiver"
 
+local remove_all_invalid_receivers
+
 script.on_init(function()
     global = {}
     global.entities = {}
@@ -26,6 +28,8 @@ script.on_configuration_changed(function(data)
         }
     end
     global.schema_version = 2
+    -- cleanup
+    remove_all_invalid_receivers()
 end)
 
 local function create_receiver(locomotive)
@@ -44,7 +48,7 @@ local function create_receiver(locomotive)
     end
 end
 
-local function remove_all_invalid_receivers()
+remove_all_invalid_receivers = function()
     for i, e in pairs(global.entities) do
         if not (e and receiver.is_valid_receiver(global.entities, e.receiver)) then
             if e and e.receiver.valid then e.receiver.destroy() end
