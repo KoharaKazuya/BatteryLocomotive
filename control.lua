@@ -6,6 +6,14 @@ local receiver = require "utils.receiver"
 
 local remove_all_invalid_receivers
 
+local function mod_compatibility_hooks()
+	if remote.interfaces["FuelTrainStop"] then
+		remote.call("FuelTrainStop", "exclude_from_fuel_schedule", key.locomotive)
+		remote.call("FuelTrainStop", "exclude_from_fuel_schedule", key.locomotive_mk2)
+		remote.call("FuelTrainStop", "exclude_from_fuel_schedule", key.locomotive_mk3)
+	end
+end
+
 script.on_init(function()
     global = {}
     global.entities = {}
@@ -15,6 +23,11 @@ script.on_init(function()
         [key.locomotive_mk3] = true
     }
     global.schema_version = 2
+    mod_compatibility_hooks()
+end)
+
+script.on_load(function()
+    mod_compatibility_hooks()
 end)
 
 script.on_configuration_changed(function(data)
