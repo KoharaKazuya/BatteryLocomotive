@@ -32,7 +32,7 @@ local function add_locomotive(attr)
     local entity = table.deepcopy(data.raw["locomotive"]["locomotive"])
     entity.name = attr.locomotive
     entity.minable.result = attr.locomotive
-    entity.color = {0.8, 0.8, 1}
+    entity.color = attr.color
     entity.burner = {
         effectivity = 1,
         fuel_inventory_size = 0,
@@ -43,7 +43,7 @@ local function add_locomotive(attr)
     local item = table.deepcopy(data.raw["item-with-entity-data"]["locomotive"])
     item.name = attr.locomotive
     item.order = item.order .. "-a[" .. attr.order .. "]"
-    item.icon = "__BatteryLocomotive__/graphics/icons/battery-locomotive.png"
+    item.icon = "__BatteryLocomotive__/graphics/icons/" .. attr.locomotive .. ".png"
     item.place_result = attr.locomotive
 
     -- locomotive recipe
@@ -77,6 +77,7 @@ add_locomotive {
         {name = "electric-engine-unit", amount = 20},
         {name = "battery", amount = 100}
     },
+    color = {0, 0, 0, 0.5},
     fuel_base = "coal",
     fuel_value = "600MJ" -- Coal's fuel value (4MJ) * Coal's stack size (50) * Locomotive's fuel inventory size (3)
 }
@@ -88,6 +89,7 @@ add_locomotive {
         {name = key.locomotive, amount = 1}, {name = "battery", amount = 100},
         {name = "advanced-circuit", amount = 10}
     },
+    color = {0.9, 0.5, 0.1, 0.5},
     fuel_base = "rocket-fuel",
     fuel_value = "3000MJ" -- Rocket fuel's fuel value (100MJ) * Rocket fuel's stack size (10) * Locomotive's fuel inventory size (3)
 }
@@ -101,6 +103,7 @@ add_locomotive {
         {name = "low-density-structure", amount = 10},
         {name = "processing-unit", amount = 30}
     },
+    color = {0, 1, 0, 0.5},
     fuel_base = "nuclear-fuel",
     fuel_value = "3.63GJ" -- Nuclear fuel's fuel value (1.21GJ) * Nuclear fuel's stack size (1) * Locomotive's fuel inventory size (3)
 }

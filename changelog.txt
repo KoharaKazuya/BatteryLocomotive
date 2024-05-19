@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2024.5.18
+  Features:
+    - Updated the colors of items Battery Locomotive, Battery Locomotive MK2, and Battery Locomotive MK3 in their respective recipes to better distinguish them from each other.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2020.12.29
   Features:
